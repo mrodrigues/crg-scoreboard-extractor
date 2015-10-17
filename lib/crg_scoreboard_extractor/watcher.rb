@@ -8,7 +8,7 @@ class CrgScoreboardExtractor::Watcher
   def every(interval)
     loop do
       before = Time.now
-      yield Bout.new(File.open(path))
+      yield CrgScoreboardExtractor::Bout.new(File.open(path))
       until_interval = interval - (Time.now - before)
       sleep(until_interval) if interval > 0
     end
