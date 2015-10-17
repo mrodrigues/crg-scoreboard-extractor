@@ -36,7 +36,8 @@ CrgScoreboardExtractor::Watcher.new('path/to/scoreboard-0-now.xml').every(5) do 
   bout.team1.logo_path
   bout.team1.score
   bout.team1.lead_jammer
-  bout.team1.positions # The list of skaters positions in the jam
+  bout.team1.positions # The list of skaters positions in the current jam
+  bout.team1.jammer # A helper method to get the team's jammer in the current jam from the positions list
 
   position = bout.team1.positions.first
   position.type # Jammer, Pivot, Blocker1, Blocker2, etc.
@@ -45,7 +46,7 @@ CrgScoreboardExtractor::Watcher.new('path/to/scoreboard-0-now.xml').every(5) do 
 end
 ```
 
-You can also manipulate directly the `Bout` class:
+You can also instantiate directly the `Bout` class:
 
 ```ruby
 CrgScoreboardExtractor::Bout.new(File.open('path/to/scoreboard-0-now.xml'))
