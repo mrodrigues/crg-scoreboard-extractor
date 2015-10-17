@@ -19,15 +19,17 @@ class TestBout < Minitest::Test
   end
 
   def test_team1
+    jammer = Position.new("Jammer", "Moshzilla", "42")
     positions = [
       Position.new("Blocker2", "", ""),
-      Position.new("Jammer", "Moshzilla", "42"),
+      jammer,
       Position.new("Blocker1", "", ""),
       Position.new("Pivot", "", ""),
       Position.new("Blocker3", "", "")
     ]
     team1 = Team.new("Sugar Loathe", "/images/teamlogo/sugar-loathe.jpg", "2", true, positions)
     assert_equal @bout.team1, team1
+    assert_equal @bout.team1.jammer, jammer
   end
 
   def test_team2

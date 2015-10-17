@@ -12,4 +12,8 @@ class CrgScoreboardExtractor::Team < Struct.new(:name, :logo_path, :score, :lead
 
     new(name, logo_path, score, lead_jammer, positions)
   end
+
+  def jammer
+    positions.detect { |position| position.type == 'Jammer' }
+  end
 end
