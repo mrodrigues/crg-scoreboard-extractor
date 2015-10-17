@@ -1,4 +1,4 @@
-class Clock < Struct.new(:time, :number, :running)
+class CrgScoreboardExtractor::Clock < Struct.new(:time, :number, :running)
   def self.from_node(node)
     time = format_time(node.at_xpath('Time').content.to_i)
     number = node.at_xpath('Number').content

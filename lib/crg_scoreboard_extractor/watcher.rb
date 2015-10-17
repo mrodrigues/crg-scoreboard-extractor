@@ -1,6 +1,6 @@
 require_relative 'bout'
 
-class Watcher
+class CrgScoreboardExtractor::Watcher
   def initialize(path)
     self.path = path
   end

@@ -1,7 +1,9 @@
 require 'minitest/autorun'
-require 'bout'
+require 'crg_scoreboard_extractor'
 
 class TestBout < Minitest::Test
+  include CrgScoreboardExtractor
+
   def setup
     @bout = Bout.new(File.open('test/fixtures/scoreboard-0-now.xml'))
   end

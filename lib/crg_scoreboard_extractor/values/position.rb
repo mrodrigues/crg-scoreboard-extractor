@@ -1,4 +1,4 @@
-class Position < Struct.new(:type, :name, :number)
+class CrgScoreboardExtractor::Position < Struct.new(:type, :name, :number)
   def self.from_node(node)
     type = node.attr('Id')
     name = node.at_xpath('Name').content

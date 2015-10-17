@@ -2,25 +2,25 @@ require 'nokogiri'
 require_relative 'values/clock'
 require_relative 'values/team'
 
-class Bout
+class CrgScoreboardExtractor::Bout
   def initialize(file)
     self.doc = Nokogiri::XML(file)
   end
 
   def jam
-    Clock.from_node(jam_node)
+    CrgScoreboardExtractor::Clock.from_node(jam_node)
   end
 
   def period
-    Clock.from_node(period_node)
+    CrgScoreboardExtractor::Clock.from_node(period_node)
   end
 
   def team1
-    Team.from_node(team_node(1))
+    CrgScoreboardExtractor::Team.from_node(team_node(1))
   end
 
   def team2
-    Team.from_node(team_node(2))
+    CrgScoreboardExtractor::Team.from_node(team_node(2))
   end
 
   private
