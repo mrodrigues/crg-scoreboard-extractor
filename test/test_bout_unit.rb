@@ -9,12 +9,12 @@ class TestBout < Minitest::Test
   end
 
   def test_jam
-    jam = Clock.new('01:22', '1', true)
+    jam = Clock.new(82300, '1', true)
     assert_equal @bout.jam, jam
   end
 
   def test_period
-    period = Clock.new('29:22', '2', true)
+    period = Clock.new(1762300, '2', true)
     assert_equal @bout.period, period
   end
 
